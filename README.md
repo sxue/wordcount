@@ -27,17 +27,32 @@ private void writeWords()
 Console.WriteLine( "!!! WordCount.writeWords()" );
 }
 }
-//using System;
  public class WordCountEntry
 {
-//static public void Main()
-//  public
    static void Main(string[] args)
-  {  if (args.Length==0)
+  { 
+    if (args.Length==0)
    {
     display_usage();
     return ; 
     }
+bool traceOn=false;
+bool spYOn=false;
+foreach ( string option in args )
+{
+  if (option.Equals("-t"))
+      traceOn=true;
+else
+if(option.Equals("-s"))
+spyOn=true;
+else
+if(option.Equals("-h"))
+{display_usage();
+ return;
+}
+else
+check_valid_file_type(option);
+}
 Console.WriteLine( "Beginning WordCount program ... " );
 WordCount theObj = new WordCount();
 theObj.processFile();
