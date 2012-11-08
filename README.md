@@ -20,6 +20,9 @@ Console.WriteLine( "!!! WordCount.readFile()" );
 }
 private void openFiles()
 {
+  string file_name=@"C:\fictions\gnome.txt";
+ StreamReader freader=File.OpenText(file_name);
+ streamWriter fwriter=File.CreateText(@"C:\fictions\gnome.diag");
 Console.WriteLine( "!!! WordCount.openFiles()" );
 }
 private void writeWords()
