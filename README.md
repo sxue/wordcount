@@ -30,8 +30,14 @@ Console.WriteLine( "!!! WordCount.writeWords()" );
 //using System;
  public class WordCountEntry
 {
-static public void Main()
-{
+//static public void Main()
+//  public
+   static void Main(string[] args)
+  {  if (args.Length==0)
+   {
+    display_usage();
+    return ; 
+    }
 Console.WriteLine( "Beginning WordCount program ... " );
 WordCount theObj = new WordCount();
 theObj.processFile();
