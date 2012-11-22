@@ -64,7 +64,8 @@ Console.WriteLine( "!!! WordCount.writeWords()" );
     return ; 
     }
     else
-bool traceOn=false;
+
+bool traceOn=false;嵌入的语句不能是声明或标记语句
 bool spYOn=false;
 foreach ( string option in args )
 {
