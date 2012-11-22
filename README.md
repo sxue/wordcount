@@ -1,6 +1,7 @@
 wordcount
 =========
 using System;
+using System.IO;
 public class WordCount
 {
 public void processFile()
@@ -16,14 +17,36 @@ Console.WriteLine( "!!! WordCount.countWords()" );
 }
 private void readFile()
 {
+/*  string text_line;
+	while ((text_line=freader.ReadLine() )!=null)
+	{
+		//write to output file
+		fwriter.WriteLine(text_line );
+	}
+	//must explicitly close the readers
+	freader.Close();
+	fwrriter.Close();*/
 Console.WriteLine( "!!! WordCount.readFile()" );
 }
 private void openFiles()
 {
-  string file_name=@"C:\fictions\gnome.txt";
+  string file_name=@"a.txt";
  StreamReader freader=File.OpenText(file_name);
- streamWriter fwriter=File.CreateText(@"C:\fictions\gnome.diag");
-Console.WriteLine( "!!! WordCount.openFiles()" );
+ StreamWriter fwriter=File.CreateText(@"a.diag");
+/* {
+	 public static void display_usage()
+	{
+	string usage=
+
+		@"usage:WordCount[-s] [-t] [-h] textfile.txt
+		where[] indicates an optional argument
+		-s prints a series of performance measurements
+		-t prints a trace of the program
+		-h prints this message";
+	Console.WriteLine(usage);
+}
+//CoConsole.WriteLine( "!!! WordCount.openFiles()" );
+}*/
 }
 private void writeWords()
 {
@@ -31,6 +54,7 @@ Console.WriteLine( "!!! WordCount.writeWords()" );
 }
 }
  public class WordCountEntry
+
 {
    static void Main(string[] args)
   { 
@@ -39,6 +63,7 @@ Console.WriteLine( "!!! WordCount.writeWords()" );
     display_usage();
     return ; 
     }
+    else
 bool traceOn=false;
 bool spYOn=false;
 foreach ( string option in args )
@@ -51,7 +76,7 @@ spyOn=true;
 else
 if(option.Equals("-h"))
 {display_usage();
- return;
+	return;
 }
 else
 check_valid_file_type(option);
